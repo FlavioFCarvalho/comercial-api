@@ -2,6 +2,7 @@ package com.reobotnet.comercialapi.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +12,9 @@ public class Oportunidade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nomeProspector;
+	@Column(name = "nome_prospecto")
+	private String nomeProspecto;
+	
 	private String descricao;
 	private BigDecimal valor;
 	public Long getId() {
@@ -20,11 +23,12 @@ public class Oportunidade {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNomeProspector() {
-		return nomeProspector;
+		
+	public String getNomeProspecto() {
+		return nomeProspecto;
 	}
-	public void setNomeProspector(String nomeProspector) {
-		this.nomeProspector = nomeProspector;
+	public void setNomeProspecto(String nomeProspecto) {
+		this.nomeProspecto = nomeProspecto;
 	}
 	public String getDescricao() {
 		return descricao;
